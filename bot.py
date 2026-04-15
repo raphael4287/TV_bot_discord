@@ -5,7 +5,7 @@ import vlc
 import asyncio
 import os
 from dotenv import load_dotenv
-from ipytv import playlist   # 新增這一行
+from m3u_ipytv import playlist
 
 # 載入 .env
 load_dotenv()
