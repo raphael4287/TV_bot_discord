@@ -1,2 +1,4 @@
-discord.py
-python-dotenv
+discord.py==2.4.0
+python-vlc==3.0.21
+python-dotenv==1.0.1
+ipytv>=1.0.0
