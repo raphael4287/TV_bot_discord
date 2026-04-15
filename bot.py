@@ -19,14 +19,13 @@ if not TOKEN:
 M3U_URL = "https://iptv-org.github.io/iptv/countries/tw.m3u"
 
 print("🔄 正在從 iptv-org 載入台灣頻道清單...")
-pl = playlist.loadu(M3U_URL)   # 從網址載入
+pl = playlist.loadu(M3U_URL)
 
-# 轉成我們原本的格式（只取 name 和 url）
 tv_channels = []
 for i, channel in enumerate(pl, start=1):
-    name = channel.name.strip()
+    name = channel.name.strip() if channel.name else f"Channel {i}"
     url = channel.url.strip()
-    if url:  # 只加入有網址的
+    if url and name:
         tv_channels.append({
             "num": i,
             "name": name,
